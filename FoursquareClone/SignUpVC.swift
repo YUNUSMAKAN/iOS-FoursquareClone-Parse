@@ -47,7 +47,9 @@ class SignUpVC: UIViewController {
       
         
     }
-
+    
+    
+    //KULLANICI GIRIS
     @IBAction func signInClicked(_ sender: Any) {
         
         if userNameText.text != "" && passwordText.text != "" {
@@ -69,7 +71,7 @@ class SignUpVC: UIViewController {
     }
     
     
-    
+    //KULLANICI KAYIT
     @IBAction func signUpClicked(_ sender: Any) {
         
         if userNameText.text != "" && passwordText.text != "" {
