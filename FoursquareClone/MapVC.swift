@@ -28,7 +28,7 @@ class MapVC: UIViewController {
     @objc func backButtomClicked(){
         
         //navigationController?.popViewController(animated: true) burada bunu kullanarak geri gidemeyiz direk navigation arkasindan oldugu icin.
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil) // bu metod ile direk addplaceVc ye geceniliriz.
         
     }
 
