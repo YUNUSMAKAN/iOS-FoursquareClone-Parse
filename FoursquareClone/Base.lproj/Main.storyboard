@@ -247,6 +247,10 @@
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selectimage" translatesAutoresizingMaskIntoConstraints="NO" id="k3x-ma-smf">
                                 <rect key="frame" x="65" y="293" width="286" height="321"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="321" id="3RG-oV-p2F"/>
+                                    <constraint firstAttribute="width" constant="286" id="fIC-q5-ZhN"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
