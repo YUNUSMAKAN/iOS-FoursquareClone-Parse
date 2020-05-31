@@ -15,6 +15,7 @@ class PlacesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var placeNameArray = [String]()
     var placeIdArray = [String]()
+    var selectPlaceId = ""
     
     
     override func viewDidLoad() {
@@ -45,8 +46,8 @@ class PlacesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     self.placeIdArray.removeAll(keepingCapacity: false)
                     
                     for object in objects! {
-                        if let placeName = object.object(forKey: "name") as? String{
-                            if let placeId = object.objectId as? String {
+                        if let placeName = object.object(forKey: "name") as? String {
+                            if let placeId = object.objectId {
                                 self.placeNameArray.append(placeName)
                                 self.placeIdArray.append(placeId)
                                 
@@ -93,6 +94,22 @@ class PlacesVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Segue olmadan once ne yapicagimizi belirttigimiz fonksiyon!
+        //Cektigimiz verileri detailsVC ye aktarimini gerceklestirdik.
+        if segue.identifier == "toDetailsVC" {
+            let destinationVC = segue.destination as! DetailsVC
+            destinationVC.chosenPlaceId = selectPlaceId
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //Tableviewda bir secime tiklama yapildiginda ne yapmasi gerektigini belirten fonksiyon!
+        selectPlaceId = placeIdArray[indexPath.row]
+        self.performSegue(withIdentifier: "toDetailsVC", sender: nil)
     }
     
     func makeAlert(titleInput : String, messageInput : String){
