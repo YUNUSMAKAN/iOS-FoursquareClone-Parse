@@ -1,4 +1,4 @@
-# IOS-FoursquareCloneApp
+# iOS-FoursquareCloneApp
 
 # Project Main
 
